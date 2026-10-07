@@ -58,6 +58,13 @@ Structural Engineering | Earthquake Engineering | Low-Damage Design | Seismic Re
 ## Preliminary Results
 
 ### Inter-Storey Drift Profile
+### Illustrative Earthquake Ground Motion
+
+The following ground-motion input is used to demonstrate the seismic-analysis workflow.
+
+![Illustrative Earthquake Ground Motion](illustrative_ground_motion.png)
+
+> Note: This is an illustrative input signal used for workflow development. It is not an actual recorded earthquake ground motion.
 
 The preliminary model demonstrates the calculation and visualization of inter-storey drift across the building height.
 
