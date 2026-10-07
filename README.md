@@ -78,3 +78,16 @@ A simplified single-degree-of-freedom (SDOF) model is used to demonstrate the re
 ![SDOF Seismic Response](sdof_response.png)
 
 > Note: The current response is generated using an illustrative ground-motion input and a simplified numerical model. Further development will use validated structural models and recorded earthquake data.
+### 6-Storey Building Modal Analysis
+
+A simplified six-degree-of-freedom shear-building model was developed to investigate the dynamic characteristics of the representative RC building.
+
+The model uses the assumed building mass and storey stiffness to estimate the natural periods and mode shapes.
+
+#### First Mode Shape
+
+![First Mode Shape](first_mode_shape.png)
+
+The first mode represents the fundamental lateral deformation pattern of the building, with increasing displacement toward the upper storeys.
+
+> Note: The current model uses preliminary assumed mass and stiffness properties. These parameters will be refined during further development and validation.
