@@ -91,3 +91,21 @@ The model uses the assumed building mass and storey stiffness to estimate the na
 The first mode represents the fundamental lateral deformation pattern of the building, with increasing displacement toward the upper storeys.
 
 > Note: The current model uses preliminary assumed mass and stiffness properties. These parameters will be refined during further development and validation.
+### Non-Structural Element Damage Assessment
+
+A preliminary drift-based assessment was performed to investigate the potential damage state of drift-sensitive non-structural elements (NSEs).
+
+The inter-storey drift ratios obtained from the simplified six-storey seismic response model were used as the damage-demand parameter.
+
+| Storey | Drift Ratio | Illustrative Damage State |
+| ------ | ----------: | ------------------------- |
+| 1      |      0.744% | Moderate Damage           |
+| 2      |      0.715% | Moderate Damage           |
+| 3      |      0.650% | Moderate Damage           |
+| 4      |      0.532% | Moderate Damage           |
+| 5      |      0.377% | Slight Damage             |
+| 6      |      0.195% | No / Very Low Damage      |
+
+![NSE Damage Assessment](nse_damage_assessment.png)
+
+> **Note:** The damage thresholds used in the current implementation are illustrative and are intended to demonstrate the damage-assessment workflow. They are not presented as code limits or experimentally validated thresholds. Future work will replace these assumptions with literature-based NSE damage-state criteria and probabilistic fragility relationships.
