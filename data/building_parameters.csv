@@ -1,0 +1,10 @@
+parameter,value,unit
+Number of storeys,6,-
+Storey height,3.2,m
+Building plan length,20,m
+Building plan width,15,m
+Concrete grade,M25,-
+Steel grade,Fe500,-
+Column size,500x500,mm
+Beam size,300x500,mm
+Seismic system,RC moment resisting frame,-
