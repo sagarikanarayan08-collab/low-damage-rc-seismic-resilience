@@ -109,3 +109,20 @@ The inter-storey drift ratios obtained from the simplified six-storey seismic re
 ![NSE Damage Assessment](nse_damage_assessment.png)
 
 > **Note:** The damage thresholds used in the current implementation are illustrative and are intended to demonstrate the damage-assessment workflow. They are not presented as code limits or experimentally validated thresholds. Future work will replace these assumptions with literature-based NSE damage-state criteria and probabilistic fragility relationships.
+### NSE Fragility Analysis
+
+A preliminary probabilistic fragility framework was developed to relate inter-storey drift demand to the probability of exceeding selected non-structural element (NSE) damage states.
+
+A lognormal fragility formulation was used to demonstrate the relationship between drift demand and damage-state exceedance probability.
+
+The current illustrative model considers three damage states:
+
+* Slight Damage
+* Moderate Damage
+* Severe Damage
+
+![NSE Fragility Curves](nse_fragility_curves.png)
+
+The fragility curves demonstrate how the probability of exceeding a given NSE damage state increases with increasing inter-storey drift demand.
+
+> **Note:** The median drift capacities and dispersion parameter used in the current analysis are illustrative assumptions for workflow development. They are not experimentally validated or literature-calibrated values. Future work will incorporate published NSE damage-state data and calibrated fragility parameters.
