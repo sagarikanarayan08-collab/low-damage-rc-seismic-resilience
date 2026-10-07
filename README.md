@@ -2,100 +2,117 @@
 
 ## Overview
 
-This project investigates the seismic performance of conventional and low-damage reinforced-concrete (RC) buildings, with emphasis on structural response, residual drift, non-structural element (NSE) damage and post-earthquake recovery.
+This project develops a computational framework for investigating the seismic resilience of reinforced-concrete (RC) buildings, with emphasis on structural deformation, drift-sensitive non-structural elements (NSEs), damage exceedance and post-earthquake recovery.
 
-## Objectives
+A simplified six-storey RC building model is currently used to demonstrate the analysis workflow. The project is being progressively developed toward a validated seismic-response and fragility-analysis framework.
 
-* Compare conventional and low-damage RC structural systems under earthquake loading.
-* Evaluate maximum and residual inter-storey drift.
-* Investigate the relationship between structural drift and damage to drift-sensitive non-structural elements.
-* Develop damage-state and fragility relationships for selected NSEs.
-* Assess implications for repairability and post-earthquake functionality.
+## Research Objectives
 
-## Methodology
+* Evaluate seismic deformation demands in a representative multi-storey RC building.
+* Quantify storey displacement and inter-storey drift.
+* Investigate the relationship between drift demand and potential damage to drift-sensitive NSEs.
+* Develop a probabilistic framework for NSE damage-state exceedance.
+* Examine residual drift and post-earthquake recovery.
+* Establish a computational basis for comparing conventional and low-damage structural systems.
 
-**RC Building Model → Modal Analysis → Nonlinear Seismic Analysis → Inter-Storey Drift → NSE Damage Assessment → Fragility Analysis → Recovery Assessment**
+## Computational Framework
 
-### Structural Response
+**Building Model → Modal Analysis → Seismic Response → Inter-Storey Drift → NSE Damage Assessment → Fragility Analysis → Recovery Assessment → Conventional/Low-Damage Comparison**
 
-The study considers:
+### Structural Response Parameters
+
+The current framework considers:
 
 * Storey displacement
 * Inter-storey drift ratio
+* Natural periods and mode shapes
 * Residual drift
-* Base shear
-* Floor acceleration
-* Plastic hinge development
-* Energy dissipation
+* Seismic response history
+* NSE damage demand
 
-### Non-Structural Elements
+Future development will incorporate additional response quantities including base shear, floor acceleration, plastic hinge development and energy dissipation.
 
-The initial assessment considers:
+## Representative Building Model
+
+A simplified six-storey shear-building representation is used for preliminary numerical analysis.
+
+| Parameter         |                     Value |
+| ----------------- | ------------------------: |
+| Number of storeys |                         6 |
+| Storey height     |                     3.2 m |
+| Plan dimensions   |               20 m × 15 m |
+| Concrete          |                       M25 |
+| Reinforcement     |                     Fe500 |
+| Column size       |              500 × 500 mm |
+| Beam size         |              300 × 500 mm |
+| Structural system | RC moment-resisting frame |
+
+The current model uses assumed mass and stiffness properties for workflow development. These parameters will be refined as the model progresses toward a more physically representative structural analysis.
+
+## Seismic Response Analysis
+
+An illustrative ground-motion input was first developed to establish the computational workflow.
+
+![Illustrative Earthquake Ground Motion](illustrative_ground_motion.png)
+
+> **Note:** The current ground-motion signal is synthetic and is used only for workflow development. It is not a recorded earthquake ground motion.
+
+A simplified multi-degree-of-freedom building model was subsequently used to estimate seismic displacement response.
+
+![Maximum Storey Displacement](maximum_storey_displacement.png)
+
+The resulting displacement profile forms the basis for the subsequent inter-storey drift analysis.
+
+## Modal Analysis
+
+A six-degree-of-freedom shear-building model was developed to investigate the dynamic characteristics of the representative structure.
+
+The model estimates natural periods and mode shapes from the assumed mass and storey stiffness matrices.
+
+![First Mode Shape](first_mode_shape.png)
+
+> **Note:** The current modal model uses preliminary assumed mass and stiffness properties and is intended for computational workflow development.
+
+## Inter-Storey Drift Analysis
+
+Inter-storey drift ratio is calculated as:
+
+**IDRᵢ = (Δᵢ − Δᵢ₋₁) / hᵢ**
+
+where:
+
+* Δᵢ = lateral displacement at storey *i*
+* Δᵢ₋₁ = lateral displacement at the storey below
+* hᵢ = storey height
+
+The preliminary model produces the following drift profile:
+
+| Storey | Displacement (m) | Drift Ratio |
+| ------ | ---------------: | ----------: |
+| 1      |          0.02381 |      0.744% |
+| 2      |          0.04670 |      0.715% |
+| 3      |          0.06750 |      0.650% |
+| 4      |          0.08453 |      0.532% |
+| 5      |          0.09659 |      0.377% |
+| 6      |          0.10283 |      0.195% |
+
+![Inter-Storey Drift Profile](seismic_drift_profile.png)
+
+The maximum preliminary drift ratio is approximately **0.744% at Storey 1**.
+
+> **Note:** These values are outputs of the current simplified numerical model and should not be interpreted as validated structural design results.
+
+## Non-Structural Element Damage Assessment
+
+Because many NSEs are sensitive to inter-storey deformation, drift demand is used as the primary damage-demand parameter in the preliminary assessment.
+
+The current workflow considers representative drift-sensitive NSE categories such as:
 
 * Partition walls
 * Glazing systems
 * Suspended ceilings
 
-### Seismic Performance
-
-Structural and non-structural damage are evaluated across multiple earthquake intensity levels to investigate the relationship between seismic demand and building functionality.
-
-## Tools
-
-* ETABS / OpenSees
-* Python
-* Excel
-* NumPy
-* Matplotlib
-
-## Project Status
-
-**Ongoing independent research project**
-
-## Research Focus
-
-Structural Engineering | Earthquake Engineering | Low-Damage Design | Seismic Resilience | Non-Structural Elements | Fragility Assessment
-## Preliminary Results
-
-### Inter-Storey Drift Profile
-### Illustrative Earthquake Ground Motion
-
-The following ground-motion input is used to demonstrate the seismic-analysis workflow.
-
-![Illustrative Earthquake Ground Motion](illustrative_ground_motion.png)
-
-> Note: This is an illustrative input signal used for workflow development. It is not an actual recorded earthquake ground motion.
-
-The preliminary model demonstrates the calculation and visualization of inter-storey drift across the building height.
-
-![Preliminary Inter-Storey Drift Profile](results/preliminary_drift_profile.png)
-
-> Note: The current figure uses illustrative displacement data for development of the analysis workflow. It will be replaced with results from the validated nonlinear seismic model.
-### SDOF Seismic Response
-
-A simplified single-degree-of-freedom (SDOF) model is used to demonstrate the relationship between earthquake ground motion and structural displacement response.
-
-![SDOF Seismic Response](sdof_response.png)
-
-> Note: The current response is generated using an illustrative ground-motion input and a simplified numerical model. Further development will use validated structural models and recorded earthquake data.
-### 6-Storey Building Modal Analysis
-
-A simplified six-degree-of-freedom shear-building model was developed to investigate the dynamic characteristics of the representative RC building.
-
-The model uses the assumed building mass and storey stiffness to estimate the natural periods and mode shapes.
-
-#### First Mode Shape
-
-![First Mode Shape](first_mode_shape.png)
-
-The first mode represents the fundamental lateral deformation pattern of the building, with increasing displacement toward the upper storeys.
-
-> Note: The current model uses preliminary assumed mass and stiffness properties. These parameters will be refined during further development and validation.
-### Non-Structural Element Damage Assessment
-
-A preliminary drift-based assessment was performed to investigate the potential damage state of drift-sensitive non-structural elements (NSEs).
-
-The inter-storey drift ratios obtained from the simplified six-storey seismic response model were used as the damage-demand parameter.
+An illustrative drift-based classification was implemented:
 
 | Storey | Drift Ratio | Illustrative Damage State |
 | ------ | ----------: | ------------------------- |
@@ -108,14 +125,24 @@ The inter-storey drift ratios obtained from the simplified six-storey seismic re
 
 ![NSE Damage Assessment](nse_damage_assessment.png)
 
-> **Note:** The damage thresholds used in the current implementation are illustrative and are intended to demonstrate the damage-assessment workflow. They are not presented as code limits or experimentally validated thresholds. Future work will replace these assumptions with literature-based NSE damage-state criteria and probabilistic fragility relationships.
-### NSE Fragility Analysis
+> **Note:** The damage thresholds used here are illustrative assumptions for demonstrating the assessment workflow. They are not code limits, experimental results or literature-calibrated damage thresholds.
 
-A preliminary probabilistic fragility framework was developed to relate inter-storey drift demand to the probability of exceeding selected non-structural element (NSE) damage states.
+## NSE Fragility Analysis
 
-A lognormal fragility formulation was used to demonstrate the relationship between drift demand and damage-state exceedance probability.
+A preliminary probabilistic fragility framework was developed to relate drift demand to the probability of exceeding selected NSE damage states.
 
-The current illustrative model considers three damage states:
+A lognormal formulation is used in the current implementation:
+
+**P(DS ≥ ds | θ) = Φ[ln(θ/θₘ) / β]**
+
+where:
+
+* θ = drift demand
+* θₘ = median drift capacity
+* β = logarithmic dispersion
+* Φ = standard normal cumulative distribution function
+
+Three illustrative damage states are currently considered:
 
 * Slight Damage
 * Moderate Damage
@@ -123,18 +150,19 @@ The current illustrative model considers three damage states:
 
 ![NSE Fragility Curves](nse_fragility_curves.png)
 
-The fragility curves demonstrate how the probability of exceeding a given NSE damage state increases with increasing inter-storey drift demand.
+The resulting curves demonstrate the increase in damage-state exceedance probability with increasing drift demand.
 
-> **Note:** The median drift capacities and dispersion parameter used in the current analysis are illustrative assumptions for workflow development. They are not experimentally validated or literature-calibrated values. Future work will incorporate published NSE damage-state data and calibrated fragility parameters.
-### Residual Drift and Post-Earthquake Recovery
+> **Note:** The median capacities and dispersion parameter are illustrative assumptions and are not experimentally validated or literature-calibrated. Future development will incorporate published NSE damage-state data and calibrated fragility parameters.
 
-A preliminary recovery framework was developed to investigate the evolution of residual drift following a seismic event.
+## Residual Drift and Post-Earthquake Recovery
 
-Residual drift was tracked over time, and a normalized recovery index was calculated as:
+Residual drift is investigated as a potential indicator of post-earthquake repairability and functional recovery.
+
+A normalized recovery index is currently defined as:
 
 **Recovery Index = (1 − Residual Drift / Initial Residual Drift) × 100**
 
-The illustrative model indicates a progressive reduction in residual drift with increasing time after the earthquake.
+The preliminary illustrative recovery model gives:
 
 | Time After Earthquake | Residual Drift | Recovery Index |
 | --------------------: | -------------: | -------------: |
@@ -149,12 +177,11 @@ The illustrative model indicates a progressive reduction in residual drift with 
 
 ![Post-Earthquake Residual Drift](residual_drift_recovery.png)
 
-> **Note:** The recovery data used in the current implementation are illustrative assumptions intended to demonstrate the recovery-assessment workflow. They do not represent measured post-earthquake observations. Future work will incorporate physically based residual-drift models and validated recovery relationships.
-### Conventional vs Low-Damage RC Comparison
+> **Note:** The recovery data are illustrative assumptions used to demonstrate the recovery-analysis workflow. They do not represent measured post-earthquake observations.
 
-A preliminary comparison was performed between a conventional RC response model and an illustrative low-damage RC response scenario.
+## Conventional vs Low-Damage RC Response
 
-The comparison focuses on maximum storey displacement as an indicator of seismic deformation demand.
+A preliminary computational comparison was implemented between the conventional RC response and an illustrative low-damage response scenario.
 
 | Storey | Conventional RC (m) | Low-Damage RC (m) | Illustrative Reduction |
 | ------ | ------------------: | ----------------: | ---------------------: |
@@ -167,6 +194,45 @@ The comparison focuses on maximum storey displacement as an indicator of seismic
 
 ![Conventional vs Low-Damage RC](conventional_vs_low_damage.png)
 
-The illustrative comparison indicates a reduction in maximum storey displacement of approximately 31–34% across the building height.
+The illustrative scenario indicates a displacement reduction of approximately 31–34%.
 
-> **Note:** The low-damage response values in the current implementation are assumed illustrative values and are not results from a calibrated low-damage structural model. The observed displacement reduction should therefore not be interpreted as a validated performance improvement. Future work will develop physically consistent low-damage structural models and quantify their response using validated numerical parameters and earthquake records.
+> **Note:** The low-damage response values are assumed for workflow demonstration and are not obtained from a calibrated low-damage structural model. Therefore, the reported reduction should not be interpreted as validated performance improvement.
+
+## Tools
+
+* Python
+* NumPy
+* SciPy
+* Matplotlib
+* Excel
+* ETABS / OpenSees *(planned for model validation and advanced analysis)*
+
+## Current Project Status
+
+**Ongoing independent computational research project**
+
+### Current Work
+
+* Simplified multi-storey RC dynamic model
+* Modal analysis
+* Seismic response simulation
+* Inter-storey drift calculation
+* Drift-based NSE damage assessment
+* Preliminary NSE fragility framework
+* Residual drift and recovery workflow
+* Conventional vs low-damage response comparison
+
+### Planned Development
+
+* Replace synthetic ground motion with recorded earthquake records.
+* Improve numerical time-integration methodology.
+* Develop a physically representative nonlinear RC structural model.
+* Replace illustrative NSE thresholds with literature-based damage-state criteria.
+* Calibrate probabilistic fragility parameters using published data.
+* Develop a physically consistent low-damage structural model.
+* Investigate the relationship between structural damage, NSE damage and recovery.
+* Extend the framework toward probabilistic seismic resilience assessment.
+
+## Research Focus
+
+**Structural Engineering | Earthquake Engineering | Low-Damage Design | Seismic Resilience | Non-Structural Elements | Fragility Assessment | Post-Earthquake Recovery**
