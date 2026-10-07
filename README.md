@@ -71,3 +71,10 @@ The preliminary model demonstrates the calculation and visualization of inter-st
 ![Preliminary Inter-Storey Drift Profile](results/preliminary_drift_profile.png)
 
 > Note: The current figure uses illustrative displacement data for development of the analysis workflow. It will be replaced with results from the validated nonlinear seismic model.
+### SDOF Seismic Response
+
+A simplified single-degree-of-freedom (SDOF) model is used to demonstrate the relationship between earthquake ground motion and structural displacement response.
+
+![SDOF Seismic Response](sdof_response.png)
+
+> Note: The current response is generated using an illustrative ground-motion input and a simplified numerical model. Further development will use validated structural models and recorded earthquake data.
