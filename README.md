@@ -55,3 +55,12 @@ Structural and non-structural damage are evaluated across multiple earthquake in
 ## Research Focus
 
 Structural Engineering | Earthquake Engineering | Low-Damage Design | Seismic Resilience | Non-Structural Elements | Fragility Assessment
+## Preliminary Results
+
+### Inter-Storey Drift Profile
+
+The preliminary model demonstrates the calculation and visualization of inter-storey drift across the building height.
+
+![Preliminary Inter-Storey Drift Profile](results/preliminary_drift_profile.png)
+
+> Note: The current figure uses illustrative displacement data for development of the analysis workflow. It will be replaced with results from the validated nonlinear seismic model.
