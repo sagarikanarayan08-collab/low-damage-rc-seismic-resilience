@@ -150,3 +150,23 @@ The illustrative model indicates a progressive reduction in residual drift with 
 ![Post-Earthquake Residual Drift](residual_drift_recovery.png)
 
 > **Note:** The recovery data used in the current implementation are illustrative assumptions intended to demonstrate the recovery-assessment workflow. They do not represent measured post-earthquake observations. Future work will incorporate physically based residual-drift models and validated recovery relationships.
+### Conventional vs Low-Damage RC Comparison
+
+A preliminary comparison was performed between a conventional RC response model and an illustrative low-damage RC response scenario.
+
+The comparison focuses on maximum storey displacement as an indicator of seismic deformation demand.
+
+| Storey | Conventional RC (m) | Low-Damage RC (m) | Illustrative Reduction |
+| ------ | ------------------: | ----------------: | ---------------------: |
+| 1      |             0.02381 |           0.01600 |                  32.8% |
+| 2      |             0.04670 |           0.03100 |                  33.6% |
+| 3      |             0.06750 |           0.04500 |                  33.3% |
+| 4      |             0.08453 |           0.05700 |                  32.6% |
+| 5      |             0.09659 |           0.06600 |                  31.7% |
+| 6      |             0.10283 |           0.07100 |                  31.0% |
+
+![Conventional vs Low-Damage RC](conventional_vs_low_damage.png)
+
+The illustrative comparison indicates a reduction in maximum storey displacement of approximately 31–34% across the building height.
+
+> **Note:** The low-damage response values in the current implementation are assumed illustrative values and are not results from a calibrated low-damage structural model. The observed displacement reduction should therefore not be interpreted as a validated performance improvement. Future work will develop physically consistent low-damage structural models and quantify their response using validated numerical parameters and earthquake records.
