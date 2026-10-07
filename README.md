@@ -126,3 +126,27 @@ The current illustrative model considers three damage states:
 The fragility curves demonstrate how the probability of exceeding a given NSE damage state increases with increasing inter-storey drift demand.
 
 > **Note:** The median drift capacities and dispersion parameter used in the current analysis are illustrative assumptions for workflow development. They are not experimentally validated or literature-calibrated values. Future work will incorporate published NSE damage-state data and calibrated fragility parameters.
+### Residual Drift and Post-Earthquake Recovery
+
+A preliminary recovery framework was developed to investigate the evolution of residual drift following a seismic event.
+
+Residual drift was tracked over time, and a normalized recovery index was calculated as:
+
+**Recovery Index = (1 − Residual Drift / Initial Residual Drift) × 100**
+
+The illustrative model indicates a progressive reduction in residual drift with increasing time after the earthquake.
+
+| Time After Earthquake | Residual Drift | Recovery Index |
+| --------------------: | -------------: | -------------: |
+|                   0 h |          0.80% |           0.0% |
+|                   6 h |          0.72% |          10.0% |
+|                  12 h |          0.62% |          22.5% |
+|                  24 h |          0.50% |          37.5% |
+|                  48 h |          0.35% |          56.2% |
+|                  72 h |          0.22% |          72.5% |
+|                 120 h |          0.10% |          87.5% |
+|                 168 h |          0.04% |          95.0% |
+
+![Post-Earthquake Residual Drift](residual_drift_recovery.png)
+
+> **Note:** The recovery data used in the current implementation are illustrative assumptions intended to demonstrate the recovery-assessment workflow. They do not represent measured post-earthquake observations. Future work will incorporate physically based residual-drift models and validated recovery relationships.
